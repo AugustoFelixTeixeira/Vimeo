@@ -41,6 +41,10 @@ public class Vimeo {
 		this.token = token;
 		this.tokenType = tokenType;
 	}
+	
+	public VimeoResponse getVideoId(String idVideo) throws IOException {
+		return apiRequest("/videos/"+idVideo, HttpGet.METHOD_NAME, null, null);
+	}
 
 	public VimeoResponse getVideoInfo(String endpoint) throws IOException {
 		return apiRequest(endpoint, HttpGet.METHOD_NAME, null, null);
